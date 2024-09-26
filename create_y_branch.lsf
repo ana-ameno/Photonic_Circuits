@@ -4,55 +4,99 @@ wg_width = 450e-9;
 wg_height = 220e-9;
 x_span_dvc = 5e-6;
 y_span_dvc = 5e-6;
+radius = 5e-6;
 
-addobject("s_bend_wg");
-set("name", "upper");
+#addobject("s_bend_wg");
+#set("name", "upper");
+#set("base width", wg_width);
+#set("base height", wg_height);
+#set("x span", x_span_dvc);
+#set("y span", y_span_dvc);
+#set("x", 0);
+#set("y", 0);
+#set("z", 0);
+
+#addobject("s_bend_wg");
+#set("name", "lower");
+#set("first axis", "x");
+#set("rotation 1", 180);
+#set("base width", wg_width);
+#set("base height", wg_height);
+#set("x span", x_span_dvc);
+#set("y span", y_span_dvc);
+#set("x", 0);
+#set("y", 0);
+#set("z", 0);
+
+addobject('90_bend_wg');
+set('name','lowerin');
+set('radius',radius);
 set("base width", wg_width);
 set("base height", wg_height);
-set("x span", x_span_dvc);
-set("y span", y_span_dvc);
+set("start angle",0);
 set("x", 0);
-set("y", 0);
+set("y", -5e-6);
 set("z", 0);
 
-addobject("s_bend_wg");
-set("name", "lower");
-set("first axis", "x");
-set("rotation 1", 180);
+addobject('90_bend_wg');
+set('name','upin');
+set('radius',radius);
 set("base width", wg_width);
 set("base height", wg_height);
-set("x span", x_span_dvc);
-set("y span", y_span_dvc);
+set("start angle",270);
 set("x", 0);
-set("y", 0);
+set("y", 5e-6);
 set("z", 0);
+
+
+addobject('90_bend_wg');
+set('name','lowerout');
+set('radius',radius);
+set("base width", wg_width);
+set("base height", wg_height);
+set("start angle",90);
+set("x", 10e-6);
+set("y", 5e-6);
+set("z", 0);
+
+
+addobject('90_bend_wg');
+set('name','upout');
+set('radius',radius);
+set("base width", wg_width);
+set("base height", wg_height);
+set("start angle",180);
+set("x", 10e-6);
+set("y", -5e-6);
+set("z", 0);
+
 
 addrect();
 set("name", "in");
-set("x span", 2e-6);
+set("x span", 10e-6);
 set("y span", wg_width);
 set("z span", wg_height);
 set("material", "Si (Silicon) - Palik");
-set("x", -1e-6);
+set("x", -5e-6);
 set("y", 0);
 set("z", 0);
 
 addrect();
 set("name", "out_1");
-set("x span", 2e-6);
+set("x span", 10e-6);
 set("y span", wg_width);
 set("z span", wg_height);
 set("material", "Si (Silicon) - Palik");
-set("x", x_span_dvc+1e-6);
-set("y", y_span_dvc);
+set("x", 15e-6);
+set("y", 10e-6);
 set("z", 0);
 
 addrect();
 set("name", "out_2");
-set("x span", 2e-6);
+set("x span", 10e-6);
 set("y span", wg_width);
 set("z span", wg_height);
 set("material", "Si (Silicon) - Palik");
-set("x", x_span_dvc+1e-6);
-set("y", -y_span_dvc);
+set("x", 15e-6);
+set("y", -10e-6);
 set("z", 0);
