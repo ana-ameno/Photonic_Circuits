@@ -33,7 +33,8 @@ set("background material", "SiO2 (Glass) - Palik");
 set("global monitor frequency points", number_of_points);
 set("global source wavelength start", 1500e-9);
 set("global source wavelength stop", 1600e-9);
-set('y min bc', 'Symmetric');
+set('y min bc', 'Anti-Symmetric');
+#set('y min bc', 'Symmetric');
 
 
 # add ports
@@ -43,6 +44,7 @@ set("x", -1.0e-6);
 set("y", 0);
 set("y span", solver_z_span);
 set("z span", solver_z_span);
+set("direction", "backward");#comentar pra splitter
 
 addport();
 set("name", "out_1");
@@ -50,7 +52,7 @@ set("x", 11e-6);
 set("y", 10e-6);
 set("y span", y_span_dvc-1e-6);
 set("z span", solver_z_span);
-set("direction", "backward");
+#set("direction", "backward");#descomentar pra splitter
 
 addport();
 set("name", "out_2");
@@ -58,7 +60,7 @@ set("x", 11e-6);
 set("y", -10e-6);
 set("y span", y_span_dvc-1e-6);
 set("z span", solver_z_span);
-set("direction", "backward");
+#set("direction", "backward");#descomentar p splitter
 
 # add monitors
 addindex();
