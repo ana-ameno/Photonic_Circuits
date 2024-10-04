@@ -33,6 +33,7 @@ set("background material", "SiO2 (Glass) - Palik");
 set("global monitor frequency points", number_of_points);
 set("global source wavelength start", 1500e-9);
 set("global source wavelength stop", 1600e-9);
+set("mesh accuracy", 3);
 set('y min bc', 'Anti-Symmetric');
 #set('y min bc', 'Symmetric');
 
